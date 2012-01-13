@@ -44,5 +44,7 @@ module Fett
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery_ujs)
+    config.secret_token = '62183539d0a569c1e0ac361ef32115df75a5146ee8adf4223dd56c59a5752acf90ec66ef412c9422b9dea3b6979aaad8e2f5763a960726551b5263344b5a025a'
   end
 end

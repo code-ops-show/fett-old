@@ -5,7 +5,14 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3' 
+
+gem 'mysql2'
+#gem 'nifty-generators', :group => :development
+gem 'devise'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'zurb-foundation'
 
 
 # Gems used only for assets and not required
