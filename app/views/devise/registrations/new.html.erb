@@ -12,6 +12,8 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, :class => "input-text" %>
 
+  <%= f.select :type, User::USER_TYPES %>
+
   <div><%= f.submit "Sign up", :class => "nice small radius blue button" %></div>
 <% end %>
 

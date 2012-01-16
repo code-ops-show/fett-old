@@ -4,11 +4,14 @@ Fett::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :users, :path_names => { :sign_up => "Register", :sign_in => "Login", :sign_out => "Logout" }
-  
-  #  get 'logout' => 'devise/sessions#destroy'
-  #end
+  #, :controller => "users", :type => "Employer"
+  resources :employee
+  resources :employer
 
+  devise_for :users, :path_names => { :sign_up => "register", :sign_in => "login", :sign_out => "logout" }
+  devise_for :employees
+  devise_for :employers
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:
