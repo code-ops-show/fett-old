@@ -1,0 +1,38 @@
+<%= link_to "Back to all jobs", jobs_path %> /
+<%= link_to "Edit job", edit_job_path %>
+<div>
+	<p>
+		<%= @jobs.title %><br />
+		Posted <%= @jobs.created_at.strftime('%b %d') %><br />
+	</p>
+	<p>
+	 LOGO
+	</p>
+	<p>
+		Company Name<br />
+		Location: <%= @jobs.location %>
+	</p>
+</div>
+<div>
+	<div>
+		<p>Company description</p>
+		<p>Job description</p>
+	</div>
+	<div>
+		<p>
+	    salary: <%= @jobs.salary %><br />
+	    job type: <%= @jobs.job_type %><br />
+	    posted added: <%= @jobs.created_at.strftime('%b %d') %><br />
+	    +shortlist<br />
+		</p>
+	</div>
+	<div>
+	  <p>Apply Job <%= link_to "apply job" %><p>
+	  or 
+	  <p>
+     Contact Information: <br />
+     Tel: 00900900<br />
+     Email: 0900090<br />
+	  </p>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-class FixColumnJobs < ActiveRecord::Migration
+class FixColumnJobsType < ActiveRecord::Migration
   def change
   	rename_column :jobs, :type, :job_type
   end

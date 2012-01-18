@@ -5,12 +5,13 @@ Fett::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   #, :controller => "users", :type => "Employer"
-  resources :employee
-  resources :employer
+  #resources :employer
+  #resources :employees, :type => "Employee"
+  resources :jobs
 
   devise_for :users, :path_names => { :sign_up => "register", :sign_in => "login", :sign_out => "logout" }
-  devise_for :employees
-  devise_for :employers
+  devise_for :employees, :skip => :sessions
+  devise_for :employers, :skip => :sessions
   
   root :to => "home#index"
 
