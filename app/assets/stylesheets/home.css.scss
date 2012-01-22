@@ -1,3 +1,99 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*
+--------------------------------------------------
+	HEADER
+--------------------------------------------------
+*/
+div.header div.header-container h2 a {
+	float: left;
+	margin: -4px 0 0 18px;
+	font-size: 40px;
+	font-weight: normal;
+}
+/*
+--------------------------------------------------
+	CONTENT
+--------------------------------------------------
+*/
+div.content {
+	padding: 0 15px;
+}
+/*
+--------------------------------------------------
+	NAVIGATION SEARCH, POST JOB
+--------------------------------------------------
+*/
+div.nav {
+	margin: 15px 0 0;
+}
+div.nav input {
+	float: left;
+	font-size: 14px;
+	padding: 3px 10px 3px 20px;
+	width: 300px;
+}
+div.nav div.add-jobs {
+	float: right;
+	text-align: right;
+}
+div.nav div.add-jobs a {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+/*
+--------------------------------------------------
+	LISTING JOBS
+--------------------------------------------------
+*/
+div.jobs {
+	margin: 15px 0;
+}
+div.jobs h4 {
+	font-weight: normal;
+	padding: 8px 0 0 0;
+	margin: 0 0 15px 0;
+  border-top: 2px solid #000;
+  line-height: 1em;
+}
+div.jobs ul {
+	margin: 0 0 20px 0;
+}
+div.jobs ul li {
+	margin: 0;
+	font-family: "Lucida Sans";
+}
+div.jobs ul li a {
+	color: #888;
+	padding: 10px;
+	border-bottom: 1px solid #e0e0e0;
+}
+div.jobs ul li a:hover {
+  color: #000;
+  background-color: #f6f5eb;
+}
+div.jobs ul li span.location {
+  color: #000;
+	margin-right:10px;
+} 
+div.jobs ul li span.title {
+  color: #000;
+	margin-right:5px;
+}
+div.jobs ul li span.company {
+  color: #000;
+	margin-left: 5px;
+}
+div.jobs ul li span.date {
+	margin-left: 50px;
+}
+div.jobs ul li span.salary {
+	color: #000;
+}
+div.jobs ul li span.salary, div.jobs ul li span.date {
+	float: right;
+}

@@ -1,0 +1,207 @@
+/*
+--------------------------------------------------
+	NAVIGATOR LINK BAR
+--------------------------------------------------
+*/
+div.nav-link {
+	display: block;
+	overflow: hidden;
+	font-size: 13px;
+	padding: 0 0 0 5px;
+	border-top: 1px solid #C1CAD9;
+}
+div.nav-link p {
+	display: block;
+	margin: 10px 0;
+}
+/*
+--------------------------------------------------
+	JOB HEADER
+--------------------------------------------------
+*/
+div.job-header {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+/*
+--------------------------------------------------
+	JOB HEADER CONTAINER
+--------------------------------------------------
+*/
+div.job-header-container {
+	overflow: hidden;
+	float: left;
+  width: 660px;
+	padding: 20px 20px 0 20px;
+}
+div.job-header-container h1 {
+	font-size: 34px;
+	color: #222;
+	padding: 0;
+	margin: 0 0 7px 0;
+	font-weight: normal;
+	line-height: 1em;
+}
+div.job-header-container h3 {
+	font-size: 12px;
+	color: #888;
+	margin: 0 0 20px 0;
+	font-weight: normal;
+	line-height: 1em;
+}
+div.job-header-container h2 {
+	font-size: 14px;
+	font-weight: normal;
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height: 1.7em;
+}
+div.job-header-container h2 span.company {
+	font-weight: bold;
+}
+/*
+--------------------------------------------------
+	JOB HEADER LOGO
+--------------------------------------------------
+*/
+div.job-header-logo {
+	overflow: hidden;
+	float: right;
+	width: 258px; /*add 18px (w/ aside)*/
+	margin: 20px 0;
+	padding-right: 20px;
+}
+/*
+--------------------------------------------------
+	JOB CONTAINER
+--------------------------------------------------
+*/
+div.job-container {
+	overflow: hidden;
+	float: left;
+	width: 640px;
+	padding: 20px 40px 0 20px;
+	border-top: 1px solid #E8E8E8;
+	font-size: 14px;
+	color: black;
+	line-height: 1.4em;
+}
+/*
+--------------------------------------------------
+	JOB ASIDE
+--------------------------------------------------
+*/
+div.job-aside {
+	overflow: hidden;
+	float: right;
+	width: 278px; /* add 18px */
+}
+div.job-aside ul {
+	margin: 0;
+	padding: 0;
+}
+div.job-aside ul li {
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 10px 0 10px 40px;
+	border-top: 1px solid #E8E8E8;
+}
+div.job-aside ul li span.head {
+	font-weight: bold;
+}
+div.job-aside ul li span.data {
+	display: block;
+	float: right;
+	width: 160px;
+}
+div.job-aside a {
+	display: block;
+	margin: 15px 10px 0 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+/*
+--------------------------------------------------
+	JOB APPLY 
+--------------------------------------------------
+*/
+
+div.job-apply {
+	padding: 20px 20px 15px 20px;
+	overflow: hidden;
+	color: black;
+	margin: 20px 15px 15px 15px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: #EFEBE3; /*F1E9DC*/
+}
+div.job-apply h3 {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+/*
+--------------------------------------------------
+	JOB APPLY NOW
+--------------------------------------------------
+*/
+div.job-apply div.job-apply-field {
+	float: left;
+	width: 45%;
+	margin-right: 40px;
+	/*background-color: #DDD;*/
+}
+div.job-apply div.job-apply-field a {
+	display: block;
+	width: 100px;
+	margin: 10px 0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+/*
+--------------------------------------------------
+	JOB APPLY CONTACT INFORMATION
+--------------------------------------------------
+*/
+div.job-apply div.job-apply-info {
+	float: right;
+	width: 45%;
+	margin-left: 40px;
+	font-size: 14px;
+	/*background-color: #DDD;*/
+}
+div.job-apply div.job-apply-info span {
+	display: block;
+	float: left;
+	width: 90px;
+	font-weight: bold;
+}
+/*
+--------------------------------------------------
+	JOB APPLY SEPARATOR
+--------------------------------------------------
+*/
+div.job-apply h3.separator {
+	font-size: 12px;
+	text-align: center;
+	padding: 30px 0;
+	width: 2px;
+	background: black;
+	color: white;
+	float: left;
+}
+div.job-apply h3.separator span {
+	margin-left: -13px;
+	background: black;
+	padding: 5px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}

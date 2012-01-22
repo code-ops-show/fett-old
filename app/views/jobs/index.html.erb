@@ -1,7 +1,7 @@
 <%= link_to "Post job", new_job_path %><br />
 
 <% if @jobs.each do |j| %>
-  <b><%= j.location %></b> <u><%= j.title %></u> at @employer.name Salary: <%= j.salary %> <%= link_to 'view job', j %><br />
+  <b><%= j.location %></b> <u><%= j.title %></u> at <%= @employer.email %> Salary: <%= j.salary %> <%= link_to 'view job', j %><br />
 <% end.empty? %>
   empty
 <% end %>

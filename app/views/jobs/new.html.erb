@@ -1,6 +1,6 @@
 <h3>Post Job</h3>
 
-<%= form_for @jobs do |f| %>
+<%= form_for [@employer, @job] do |f| %>
   <%= f.label :title, "Job Title" %>
   <%= f.text_field :title, :class => "input-text" %>
 

@@ -7,6 +7,10 @@ Fett::Application.routes.draw do
   #, :controller => "users", :type => "Employer"
   #resources :employer
   #resources :employees, :type => "Employee"
+  resources :employer do
+    resources :jobs
+  end
+
   resources :jobs
 
   devise_for :users, :path_names => { :sign_up => "register", :sign_in => "login", :sign_out => "logout" }

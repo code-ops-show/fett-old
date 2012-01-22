@@ -1,0 +1,55 @@
+body {
+  font-family : "Lucida Sans";
+  background-color: "lightblue";
+}
+.button {
+  font-family : "Lucida Sans";
+}
+/*
+--------------------------------------------------
+	HEADER
+--------------------------------------------------
+*/
+div.header {
+  margin: 20px 0;
+}
+div.header-container {
+  left: 2%;
+}
+div.header div.header-container h2 a {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-shadow: 0 2px 0 white;
+  letter-spacing: -1px;
+}
+/*
+--------------------------------------------------
+	CONTENT
+--------------------------------------------------
+*/
+div.content {
+  background-color: #fff;
+  box-shadow: 3px 3px 3px #ccc;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  border: 1px solid #E8E8E8;
+}
+/*
+--------------------------------------------------
+	ACCOUNT HEADER MENU
+--------------------------------------------------
+*/
+div.header-account {
+  float: right;
+  text-align: right;
+}
+ul.hmenu {
+  list-style: none; 
+  margin: 0;
+  padding: 15px 0;
+}
+
+ul.hmenu li {
+  display: inline;  
+}

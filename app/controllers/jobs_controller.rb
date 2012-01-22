@@ -1,27 +1,36 @@
 class JobsController < ApplicationController
   def index
-  	@jobs = Job.all
+    @employer = get_employer(params[:employer_id])
+  	@jobs = @employer.jobs
   end
-	def list
-	  @jobs = Job.find(:all)
-	end
+
 	def show
-	  @jobs = Job.find(params[:id])
+	  @job = Job.where(id: params[:id]).first
 	end
+
 	def new
-    @jobs = Job.new
+    if current_user
+      @employer = get_employer(params[:employer_id])
+      @job = @employer.jobs.build
+    else 
+      @job = Job.new
+    end
   end
+
   def create
-  	@jobs = Job.new(params[:job])
-  	if @jobs.save
-  		redirect_to :action => "index"
+    @employer = get_employer(params[:employer_id])
+  	@job = @employer.jobs.build(params[:job])
+  	if @job.save
+  		redirect_to root_path
   	else
   		render :action => "new"
   	end
   end
+
   def edit
     @jobs = Job.find(params[:id])
   end
+
   def update
     @jobs = Job.find(params[:id])
     if @jobs.update_attributes(params[:job])
@@ -31,8 +40,15 @@ class JobsController < ApplicationController
        render :action => 'edit'
     end
   end
+
   def delete
     Job.find(params[:id]).destroy
     redirect_to :action => 'index'
+  end
+
+  private
+
+  def get_employer(employer_id)
+    Employer.where(id: params[:employer_id]).first
   end
 end

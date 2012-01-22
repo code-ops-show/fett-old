@@ -1,6 +1,38 @@
-<h1>Hello, Rails!</h1>
-<% if @jobs.each do |j| %>
-  <%= j.title %>
-<% end.empty? %>
-  empty
-<% end %>
+<div class="row">
+  <div class="content">
+		<div class="row">
+		  <div class=" nav">
+			  <div class="eight columns" style="background-color: #eee">
+			    <input type="text" placeholder="Search" />
+			  </div>
+			  <div class="four columns add-jobs" style="background-color: #c0c0c0">
+				  <% if current_user %>
+				  <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button" %>
+				  <% else %>
+				  <%= link_to "Post a job", new_job_path, :class => "medium button" %>
+				  <% end %>
+				</div>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="twelve columns jobs" style="background-color: #c0c0c0">
+		    <h4>Recent Jobs</h4>
+			  <ul>
+				<% if @jobs.each do |j| %>
+				  <li style="background-color: #fff">
+				    <a href="<%= job_path(j) %>" style="display:block">
+					    <span class="location"><b><%= j.location %></b></span>
+					    <span class="title"><u><%= j.title %></u></span> at 
+					    <span class="company"><%= j.employer.email rescue 'no employer email' %></span>
+					    <span class="date"><%= j.created_at.strftime('%b %d') %></span>
+					    <span class="salary"><%= j.salary %></span>
+				    </a>
+				  </li>
+				<% end.empty? %>
+				  empty
+				<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

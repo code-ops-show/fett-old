@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	@jobs = Job.find(:all)
+  	@jobs = Job.all
   end
 
 end
