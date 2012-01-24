@@ -1,8 +1,23 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+/*
+##################################################
+	TEMP BG
+##################################################
+*/
+/*
+div.nav div.search-jobs {
+	background-color: #eee;
+}
+div.nav div.add-jobs {
+	background-color: #c0c0c0;
+}
+div.jobs {
+	margin: 15px 0;
+	background-color: #c0c0c0;
+}
+*/
 /*
 --------------------------------------------------
 	HEADER
@@ -47,7 +62,7 @@ div.nav div.add-jobs a {
 }
 /*
 --------------------------------------------------
-	LISTING JOBS
+	JOBS LISTING
 --------------------------------------------------
 */
 div.jobs {
@@ -57,8 +72,8 @@ div.jobs h4 {
 	font-weight: normal;
 	padding: 8px 0 0 0;
 	margin: 0 0 15px 0;
-  border-top: 2px solid #000;
-  line-height: 1em;
+	border-top: 2px solid #000;
+	line-height: 1em;
 }
 div.jobs ul {
 	margin: 0 0 20px 0;
@@ -73,19 +88,19 @@ div.jobs ul li a {
 	border-bottom: 1px solid #e0e0e0;
 }
 div.jobs ul li a:hover {
-  color: #000;
-  background-color: #f6f5eb;
+	color: #000;
+	background-color: #f6f5eb;
 }
 div.jobs ul li span.location {
-  color: #000;
+	color: #000;
 	margin-right:10px;
 } 
 div.jobs ul li span.title {
-  color: #000;
+	color: #000;
 	margin-right:5px;
 }
 div.jobs ul li span.company {
-  color: #000;
+	color: #000;
 	margin-left: 5px;
 }
 div.jobs ul li span.date {

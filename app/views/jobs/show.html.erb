@@ -1,58 +1,56 @@
 <div class="row">
   <div class="nav-link">
-	  <p style="float:right"><%= link_to "Edit job", edit_job_path %></p>
-	  <p><%= link_to "Back to all jobs", jobs_path %></p>
+      <p style="float:right"><%= link_to "Edit job", edit_job_path %></p>
+      <p><%= link_to "Back to all jobs", root_path %></p>
   </div>
 </div>
 <div class="row">
   <div class="content">
     <div class="job-header">
-			<div class="row" style="background-color: #f0f0f0">
-			  <div class="twelve columns">
-			    <div class="job-header-container" style="background-color: #ddd">
-						<h1><%= @job.title %></h1>
-						<h3>Posted <%= @job.created_at.strftime('%b %d') %></h3>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="job-header-container">
+            <h1><%= @job.title %></h1>
+            <h3>Posted <%= @job.created_at.strftime('%b %d') %></h3>
             <h2>
-	            <span class="company">Company Name</span><br />
-							<span class="location">Location: <%= @job.location %></span><br />
-							<%= link_to "www.artellectual.com" %>
-						</h2>
-					</div>
-				  <div class="job-header-logo" style="background-color: #ccc">
-				    LOGO
-				  </div>
-			  </div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve columns" style="background-color: #fff">
-			  <div class="job-container" style="background-color: #fff">
-					<p>Company description</p>
-					<p>Job description</p>
-				</div>
-				<div class="job-aside" style="background-color: #fff">
-			    <ul>
-				    <li><span class="head">Salary</span><span class="data"><%= @job.salary %></span></li>
-				    <li><span class="head">Job Type</span><span class="data"><%= @job.job_type %></span></li>
-			    </ul>
-			    <%= link_to "Add to shortlist", '', :class => "button" %> <br />
-				</div>
-				<div class="clearfix"></div>
-				<div class="job-apply">
-				  <div class="job-apply-info">
-			     <h3>Company Information</h3>
-			     <span>Email</span> contact@company.me<br />
-			     <span>Telephone</span> 00900900<br />
-				  </div>
-				  <div class="job-apply-field">
-				  	<h3>Apply for this position</h3>
-				  	<%= link_to "Apply now", "", :class => "button" %>
-				  </div>
-				  <h3 class="separator"><span>OR</span></h3> 
-				</div>
-			</div>
-		</div>
+              <span class="company">Company Name</span><br />
+              <span class="location">Location: <%= @job.location %></span><br />
+              <%= link_to "www.artellectual.com" %>
+            </h2>
+          </div>
+          <div class="job-header-logo">
+            LOGO
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div class="job-container">
+          <p>Company description</p>
+          <p><%= @job.description %></p>
+        </div>
+        <div class="job-aside">
+          <ul>
+            <li><span class="head">Salary</span><span class="data"><%= @job.salary %></span></li>
+            <li><span class="head">Job Type</span><span class="data"><%= @job.job_type %></span></li>
+          </ul>
+          <%= link_to "Add to shortlist", '', :class => "button" %> <br />
+        </div>
+        <div class="clearfix"></div>
+        <div class="job-apply">
+          <div class="job-apply-info">
+            <h3>Company Information</h3>
+            <span>Email</span> <%= @job.employer.email %><br />
+            <span>Telephone</span> 00900900<br />
+          </div>
+          <div class="job-apply-field">
+            <h3>Apply for this position</h3>
+            <%= link_to "Apply now", "", :class => "button" %>
+          </div>
+          <h3 class="separator"><span>OR</span></h3> 
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<style>
-</style>

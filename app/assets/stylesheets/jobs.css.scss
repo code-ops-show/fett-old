@@ -1,4 +1,30 @@
 /*
+##################################################
+	TEMP BG
+##################################################
+
+
+div.job-header div.row {
+	background-color: #f0f0f0;
+}
+div.job-header-container {
+	background-color: #ddd;
+}
+div.job-header-logo {
+	background-color: #ccc;
+}
+div.job-container {
+	background-color: #fff
+}
+div.job-aside {
+	background-color: #fff
+}
+div.job-apply div.job-apply-field,
+div.job-apply div.job-apply-info {
+	/*background-color: #DDD;*/
+/*}*/
+
+/*
 --------------------------------------------------
 	NAVIGATOR LINK BAR
 --------------------------------------------------
@@ -32,7 +58,7 @@ div.job-header {
 div.job-header-container {
 	overflow: hidden;
 	float: left;
-  width: 660px;
+	width: 660px;
 	padding: 20px 20px 0 20px;
 }
 div.job-header-container h1 {
@@ -155,7 +181,6 @@ div.job-apply div.job-apply-field {
 	float: left;
 	width: 45%;
 	margin-right: 40px;
-	/*background-color: #DDD;*/
 }
 div.job-apply div.job-apply-field a {
 	display: block;
@@ -175,7 +200,6 @@ div.job-apply div.job-apply-info {
 	width: 45%;
 	margin-left: 40px;
 	font-size: 14px;
-	/*background-color: #DDD;*/
 }
 div.job-apply div.job-apply-info span {
 	display: block;
@@ -204,4 +228,71 @@ div.job-apply h3.separator span {
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
+}
+/*
+--------------------------------------------------
+	JOB NEW POST HEADER
+--------------------------------------------------
+*/
+div.job-post-header {
+	overflow: hidden;
+	margin: 0;
+	padding: 20px 20px 0 20px;
+}
+div.job-post-header h1 {
+	font-size: 26px;
+	color: #222;
+	padding: 10px 0 0 0;
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+/*
+--------------------------------------------------
+	JOB NEW POST CONTAINER
+--------------------------------------------------
+*/
+div.job-post-container {
+	overflow: hidden;
+	margin: 0;
+	padding: 0 20px 20px 20px;
+}
+div.job-post-container form {
+	margin: 0;
+}
+div.job-post-container h2 {
+	font-size: 16px;
+	color: #3385D6;
+	border-top: 1px solid #CCC;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+div.job-post-container table {
+	margin-left: 10px;
+	border: none;
+}
+div.job-post-container table td {
+	text-align: left;
+	vertical-align: top;
+	padding: 0 10px 20px 0;
+	font-size: 12px;
+	color: #888;
+}
+div.job-post-container label {
+	font-weight: bold;
+	color: #000;
+	padding-top: 6px;
+}
+div.job-post-container input.input-text {
+	font-size: 14px;
+	width: 300px;
+	padding: 3px;
+	margin: 2px 0;
+}
+div.job-post-container div.position-description {
+	margin: 0 0 20px 10px;
+	padding: 0;
+}
+div.job-post-container input.button {
+	margin: 20px 0 20px 10px;
+	text-shadow: 0 2px 0 #0066CC;
 }

@@ -1,20 +1,23 @@
-<h3>Sign up</h3>
+<div class="row">
+  <div class="twelve columns content">
+    <h3>Sign up</h3>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <%= f.label :email %>
+      <%= f.email_field :email, :class => "input-text" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, :class => "input-text" %>
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => "input-text" %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, :class => "input-text" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, :class => "input-text" %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, :class => "input-text" %>
+      <%= f.select :type, User::USER_TYPES %>
 
-  <%= f.select :type, User::USER_TYPES %>
+      <div><%= f.submit "Sign up", :class => "nice small radius blue button" %></div>
+    <% end %>
 
-  <div><%= f.submit "Sign up", :class => "nice small radius blue button" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>
