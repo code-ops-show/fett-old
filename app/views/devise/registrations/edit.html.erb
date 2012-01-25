@@ -1,22 +1,27 @@
 <div class="row">
   <div class="twelve columns content">
-    <h3>Edit <%= resource_name.to_s.humanize %></h2>
-
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true, :class => "user_edit nice" }) do |f| %>
-      <%= devise_error_messages! %>
+    <div class="row">
+      <div class="twelve columns content-header">
+        <h1>Edit <%= resource_name.to_s.humanize %></h1>
+        <%= devise_error_messages! %>
+      </div>
+    </div>
+    <div class="row content-container">
+      <div class="four columns register-account">
+        <h2>Account</h2>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, :class => "input-text" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, :class => "input-text" %>
 
-      <%= f.label "Password (Leave blank if you don't want to change it)" %>
-      <%= f.password_field :password, :class => "input-text" %>
+        <%= f.label "Password (Leave blank if you don't want to change it)" %>
+        <%= f.password_field :password, :class => "input-text" %>
 
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, :class => "input-text" %>
-
-      <%= f.label "Current password (We need your current password to confirm your changes)" %>
-      <%= f.password_field :current_password, :class => "input-text" %>
-      <hr />
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, :class => "input-text" %>
+      </div>
+      <div class="four columns register-information">
+        <h2>Information</h2>
       <%= f.label :name %>
       <%= f.text_field :name, :class => "input-text" %>
 
@@ -28,16 +33,31 @@
 
       <%= f.label :url %>
       <%= f.text_field :url, :class => "input-text" %>
-      <hr />
-      <%= f.file_field :image %>
-
-      <div><%= f.submit "Update", :class => "button radius" %></div>
+      </div>
+      <div class="four columns register-picture">
+        <h2>Avatar, Logo</h2>
+        <%= image_tag current_user.image_url, :width => "200" %>
+        <label>Browse from your drive</label>
+        <%= f.file_field :image %>
+        <br /><br />
+        <p>Optional — Your company logo will appear at the top of your listing.
+190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>
+        <p>Your company logo (will be resized to < 200x100px)</p>
+      </div>
+    </div>
+    <div class="row register-action">
+      <div class="four columns cancel">
+        <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.
+      </div>
+      <div class="four columns confirm-password">
+        <h2>Confirmation Password</h2>
+        <%= f.label "We need your current password to confirm your changes" %>
+        <%= f.password_field :current_password, :class => "input-text" %>
+      </div>
+      <div class="four columns signup">
+        <%= link_to "Back", :back, :class => "button radius" %> <%= f.submit "Update", :class => "button radius" %>
+      </div>
+    </div>
     <% end %>
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-    <%= link_to "Back", :back %>
   </div>
 </div>

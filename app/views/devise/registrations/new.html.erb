@@ -1,6 +1,6 @@
 <div class="row">
   <div class="twelve columns content">
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "user_new nice" }) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true, :class => "user_new nice" }) do |f| %>
     <div class="row">
       <div class="twelve columns content-header">
         <h1>Register</h1>
@@ -38,7 +38,8 @@
       </div>
       <div class="four columns register-picture">
         <h2>Avatar, Logo</h2>
-        <label>Browse from your drive</label><%= button_tag "choose.." %>
+        <label>Browse from your drive</label>
+        <%= f.file_field :image %>
         <br /><br />
         <p>Optional — Your company logo will appear at the top of your listing.
 190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>

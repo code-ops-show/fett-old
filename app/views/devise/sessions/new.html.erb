@@ -30,7 +30,7 @@
         <li>Smart</li>
       </ul>
       <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <%= link_to "Sign up", new_registration_path(resource_name), :class => "button radius" %><br />
+        <%= link_to "Register", new_registration_path(resource_name), :class => "button radius" %><br />
       <% end -%>
     </div>
     <h3 class="separator"><span>OR</span></h3> 

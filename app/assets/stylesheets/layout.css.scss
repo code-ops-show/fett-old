@@ -73,26 +73,34 @@ div.header-menu {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-div.header-menu span {
-  padding: 0;
-  margin: 0;
-}
 div.header-menu span a {
   display: inline-block;
-  padding: 10px;
+  padding: 6px 8px;
   color: #000;
   font-weight: bold;
 }
 div.header-menu span a:hover {
-  color: #005C99;
+  color: #fff;
   background-color: #CCE0FF;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4D94DB',endColorstr='#0066CC');
+  background: -webkit-gradient(linear,left top,left bottom,from(#4D94DB),to(#0066CC));
+  background: -moz-linear-gradient(top,#4D94DB,#0066CC);
+  border-image: initial;
 }
-div.header-menu span.user a {
+div.header-menu span a:active {
+  color: #fff;
+  background-color: #000;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#666',endColorstr='#333');
+  background: -webkit-gradient(linear,left top,left bottom,from(#666),to(#333));
+  background: -moz-linear-gradient(top,#666,#333);
+  border-image: initial;
+}
+div.header-menu span a.user {
   border-right: 1px solid #ccc;
 }
-div.header-menu span.user img {
-  height: 20px;
-  width: 20px;
+div.header-menu span a.user img {
+  height: 18px;
+  width: 18px;
   margin-right: 5px;
   vertical-align: bottom;
   -webkit-border-radius: 5px;
