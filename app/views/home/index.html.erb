@@ -23,7 +23,7 @@
             <a href="<%= job_path(j) %>" style="display:block">
             <span class="location"><b><%= j.location %></b></span>
             <span class="title"><u><%= j.title %></u></span> at 
-            <span class="company"><%= j.employer.email rescue 'no employer email' %></span>
+            <span class="company"><%= j.employer.name rescue 'no employer name' %></span>
             <span class="date"><%= j.created_at.strftime('%b %d') %></span>
             <span class="salary"><%= j.salary %></span>
             </a>

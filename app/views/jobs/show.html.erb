@@ -13,9 +13,9 @@
             <h1><%= @job.title %></h1>
             <h3>Posted <%= @job.created_at.strftime('%b %d') %></h3>
             <h2>
-              <span class="company">Company Name</span><br />
+              <span class="company"><%= @job.employer.name %></span><br />
               <span class="location">Location: <%= @job.location %></span><br />
-              <%= link_to "www.artellectual.com" %>
+              <%= link_to @job.employer.url, @job.employer.url %>
             </h2>
           </div>
           <div class="job-header-logo">
@@ -42,7 +42,7 @@
           <div class="job-apply-info">
             <h3>Company Information</h3>
             <span>Email</span> <%= @job.employer.email %><br />
-            <span>Telephone</span> 00900900<br />
+            <span>Telephone</span> <%= @job.employer.telephone %><br />
           </div>
           <div class="job-apply-field">
             <h3>Apply for this position</h3>

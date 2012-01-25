@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :type
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :type, 
+  :name, :address, :telephone, :url, :image
+
+  mount_uploader :image, ImageUploader
 
   USER_TYPES = %w[Employee Employer]
 end

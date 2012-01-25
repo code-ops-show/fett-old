@@ -1,3 +1,19 @@
+/*
+--------------------------------------------------
+  TEMP
+--------------------------------------------------
+
+div.header-container {
+  background-color: #ddd;
+}
+div.header-account {
+  background-color: #666;
+}
+
+--------------------------------------------------
+  COMMON
+--------------------------------------------------
+*/
 body {
   font-family : "Lucida Sans";
   background-color: #E6F0FF;
@@ -37,19 +53,49 @@ div.content {
 }
 /*
 --------------------------------------------------
-	ACCOUNT HEADER MENU
+	HEADER ACCOUNT
 --------------------------------------------------
 */
 div.header-account {
   float: right;
-  text-align: right;
+  padding: 5px 0;
 }
-ul.hmenu {
-  list-style: none; 
-  margin: 0;
-  padding: 15px 0;
-}
+div.header-menu {
+  float: right;
 
-ul.hmenu li {
-  display: inline;  
+  border: 1px solid #CFCFCF;
+  background: #F4F4F4;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f4f4f4',endColorstr='#ececec');
+  background: -webkit-gradient(linear,left top,left bottom,from(#F4F4F4),to(#ECECEC));
+  background: -moz-linear-gradient(top,#F4F4F4,#ECECEC);
+  border-image: initial;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+div.header-menu span {
+  padding: 0;
+  margin: 0;
+}
+div.header-menu span a {
+  display: inline-block;
+  padding: 10px;
+  color: #000;
+  font-weight: bold;
+}
+div.header-menu span a:hover {
+  color: #005C99;
+  background-color: #CCE0FF;
+}
+div.header-menu span.user a {
+  border-right: 1px solid #ccc;
+}
+div.header-menu span.user img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: bottom;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

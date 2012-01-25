@@ -1,23 +1,58 @@
 <div class="row">
   <div class="twelve columns content">
-    <h3>Sign up</h3>
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "user_new nice" }) do |f| %>
+    <div class="row">
+      <div class="twelve columns content-header">
+        <h1>Register</h1>
+        <%= devise_error_messages! %>
+      </div>
+    </div>
+    <div class="row content-container">
+      <div class="four columns register-account">
+        <h2>Account</h2>
+        <%= f.label :email %>
+        <%= f.email_field :email, :class => "input-text" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, :class => "input-text" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "input-text" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, :class => "input-text" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, :class => "input-text" %>
 
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, :class => "input-text" %>
+        <%= f.label :type, "User Type" %>
+        <%= f.select :type, User::USER_TYPES %>
+      </div>
+      <div class="four columns register-information">
+        <h2>Information</h2>
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "input-text" %>
 
-      <%= f.select :type, User::USER_TYPES %>
+        <%= f.label :address %>
+        <%= f.text_field :address, :class => "input-text" %>
 
-      <div><%= f.submit "Sign up", :class => "nice small radius blue button" %></div>
+        <%= f.label :telephone %>
+        <%= f.text_field :telephone, :class => "input-text" %>
+
+        <%= f.label :url %>
+        <%= f.text_field :url, :class => "input-text" %>
+      </div>
+      <div class="four columns register-picture">
+        <h2>Avatar, Logo</h2>
+        <label>Browse from your drive</label><%= button_tag "choose.." %>
+        <br /><br />
+        <p>Optional — Your company logo will appear at the top of your listing.
+190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>
+        <p>Your company logo (will be resized to < 200x100px)</p>
+      </div>
+    </div>
+    <div class="row register-action">
+      <div class="four columns offset-by-four message">
+        Okay, Let's get your career job!
+      </div>
+      <div class="four columns signup">
+        <%= f.submit "Sign up", :class => "button radius" %>
+      </div>
+    </div>
     <% end %>
-
-    <%= render :partial => "devise/shared/links" %>
   </div>
 </div>

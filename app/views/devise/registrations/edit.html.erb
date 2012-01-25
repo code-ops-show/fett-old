@@ -2,7 +2,7 @@
   <div class="twelve columns content">
     <h3>Edit <%= resource_name.to_s.humanize %></h2>
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true, :class => "user_edit nice" }) do |f| %>
       <%= devise_error_messages! %>
 
       <%= f.label :email %>
@@ -16,8 +16,22 @@
 
       <%= f.label "Current password (We need your current password to confirm your changes)" %>
       <%= f.password_field :current_password, :class => "input-text" %>
+      <hr />
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => "input-text" %>
 
-      <div><%= f.submit "Update", :class => "nice small radius blue button" %></div>
+      <%= f.label :address %>
+      <%= f.text_field :address, :class => "input-text" %>
+
+      <%= f.label :telephone %>
+      <%= f.text_field :telephone, :class => "input-text" %>
+
+      <%= f.label :url %>
+      <%= f.text_field :url, :class => "input-text" %>
+      <hr />
+      <%= f.file_field :image %>
+
+      <div><%= f.submit "Update", :class => "button radius" %></div>
     <% end %>
 
     <h3>Cancel my account</h3>
