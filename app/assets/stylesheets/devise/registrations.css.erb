@@ -1,0 +1,138 @@
+div.content {
+	padding: 20px 0;	
+}
+
+/*
+--------------------------------------------------
+	CONTENT HEADER
+--------------------------------------------------
+*/
+div.content-header {
+	padding: 0 0 20px 20px;
+}
+div.content-header h1 {
+	font-size: 40px;
+	color: #222;
+	padding: 0;
+	margin: 0 0 7px 0;
+	font-weight: normal;
+	line-height: 1em;
+}
+/*
+--------------------------------------------------
+	USER NAVIGATOR
+--------------------------------------------------
+*/
+div.navigation {
+	padding-right: 2px;
+	margin-bottom: 20px;
+	background-color: #000; /*#2B2B2B*/
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#454545',endColorstr='#171717');
+	background: -webkit-gradient(linear,left top,left bottom,from(#454545),to(#171717));
+	background: -moz-linear-gradient(top,#454545,#171717);
+	box-shadow: 0 2px 6px 0px #666;
+}
+ul.user-nav {
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+}
+ul.user-nav li {
+	margin: 0;
+	padding: 0;
+	display: block;
+	background: none;
+	float: left;
+	height: 40px;
+	width: 180px;
+	position: relative;
+}
+ul.user-nav li a {
+	display: block;
+	color: #ECECEC;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 10px 0 0;
+	height: 30px;
+	border-right: 1px solid #454545; /*#595959*/
+}
+ul.user-nav li a:hover {
+	color: #4DB8FF;
+}
+ul.user-nav li.active a {
+	color: #4DB8FF;
+}
+ul.user-nav li div.bullet {
+	display: none;
+	width: 13px;
+	height: 6px;
+	background: url(<%= asset_path 'bullet_slider_nav_down.png' %>) 0 0 no-repeat;
+	top: 39px;
+	left: 84px;
+	position: absolute;
+}
+ul.user-nav li.active div.bullet {
+	display: block;
+}
+/*
+--------------------------------------------------
+	CONTENT CONTAINER
+--------------------------------------------------
+*/
+div.content-container {
+	padding: 10px 0;
+}
+div.content-container h2, div.register-action h2 {
+	font-size: 24px;
+	color: #222;
+	padding: 0;
+	margin: 0 0 7px 0;
+	font-weight: normal;
+	line-height: 1.2em;
+}
+div.register-information, div.register-picture {
+	margin-left: 0px;
+}
+div.register-account, div.register-information {
+	padding-left: 22px;
+}
+div.register-picture {
+	padding: 0 22px;
+}
+/*
+--------------------------------------------------
+	REGISTER ACTION
+--------------------------------------------------
+*/
+div.register-action {
+	padding: 20px 20px 15px 20px;
+	margin: 20px 15px 15px 15px;
+	overflow: hidden;
+	color: black;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: #EFEBE3; /*F1E9DC*/
+}
+div.register-action h3 {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+div.register-action div.action {
+	float: left;
+	width: 45%;
+	margin-right: 40px;
+}
+div.register-action div.cancel {
+	float: right;
+	margin-left: 40px;
+}
+
+div.register-confirm {
+	padding: 20px;
+}

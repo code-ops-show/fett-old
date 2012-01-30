@@ -107,11 +107,22 @@ div.job-container {
 	overflow: hidden;
 	float: left;
 	width: 640px;
-	padding: 20px 40px 0 20px;
+	padding: 0px 40px 0 20px;
 	border-top: 1px solid #E8E8E8;
 	font-size: 14px;
 	color: black;
 	line-height: 1.4em;
+}
+div.job-container p {
+	font-size: 14px;
+	line-height: 1.4em;
+}
+div.job-container ul {
+	list-style: inside;
+}
+div.job-container li {
+	margin: 5px 0;
+	list-style-type: square;
 }
 /*
 --------------------------------------------------
@@ -155,12 +166,11 @@ div.job-aside a {
 	JOB APPLY 
 --------------------------------------------------
 */
-
 div.job-apply {
 	padding: 20px 20px 15px 20px;
+	margin: 20px 15px 15px 15px;
 	overflow: hidden;
 	color: black;
-	margin: 20px 15px 15px 15px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
