@@ -28,13 +28,13 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @jobs = Job.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def update
-    @jobs = Job.find(params[:id])
-    if @jobs.update_attributes(params[:job])
-       redirect_to :action => 'show', :id => @jobs
+    @job = Job.find(params[:id])
+    if @job.update_attributes(params[:job])
+       redirect_to :action => 'show', :id => @job
     else
        @subjects = Subject.find(:all)
        render :action => 'edit'

@@ -1,11 +1,11 @@
 <% title "Post Job" %>
-<div class="row">
-  <div class="twelve columns content">
-    <div class="job-post-header">
-      <h1>Step 1: Post your Job</h1>
-    </div>
+<div class="row content">
+  <div class="twelve columns">
     <div class="job-post-container">
-      <h2>about the position</h2>
+      <div class="job-post-header">
+        <h1>Step 1: Post your Job</h1>
+      </div>
+      <h2>tell us about the position</h2>
       <%= form_for [@employer, @job], html: { class: 'new_job nice'} do |f| %>
         <table cellpadding="0" cellspacing="0">
           <tbody>
@@ -27,8 +27,20 @@
         <%= f.label :description %>
         <%= f.text_area :description, :size => "24x6" %>
       </div>
-      <%= f.submit "Publish", :class => "medium blue nice button radius" %>
+      <span class="button-action">
+        <%= f.submit "Publish", :class => "button radius" %>
+      </span>
       <% end %>
     </div>
+    <div class="job-edit-company">
+        <ul class="profile">
+          <li class="none"><h2><%= @job.employer.name %></h2></li>
+          <li class="none brand-logo"><%= image_tag @job.employer.image, width: "190" %></li>
+          <li><%= @job.employer.address %></li>
+          <li><%= @job.employer.telephone %></li>
+          <li><%= @job.employer.email %></li>
+          <li><%= @job.employer.url %></li>
+        </ul>
+      </div>
   </div>
 </div>

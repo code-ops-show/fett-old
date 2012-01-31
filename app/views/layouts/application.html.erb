@@ -9,7 +9,7 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
+    <div class="container">
       <div class="header">
         <div class="row">
           <div class="eight columns header-container">
@@ -34,6 +34,9 @@
       </div>
       <% #<%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
+      <div class="row footer">
+        <div class="footer-container"><p>artellectual.com</p></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,22 +1,48 @@
-<h3>Edit</h2>
-
-<%= form_for @jobs do |f| %>
-  <%= f.label :title, "Job Title" %>
-  <%= f.text_field :title, :class => "input-text" %>
-
-  <%= f.label :job_type %>
-  <%= f.select :job_type, Job::JOB_TYPES, :width => "300" %>
-
-  <%= f.label :location %>
-  <%= f.text_field :location, :class => "input-text" %>
-
-  <%= f.label :salary %>
-  <%= f.text_field :salary, :class => "input-text" %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description, :size => "24x6" %>
-
-  <%= f.submit "Update", :class => "nice small radius blue button" %>
-<% end %>
-
-<%= link_to "Back", :back %>
+<% title "Edit Job" %>
+<div class="row content">
+  <div class="twelve columns">
+    <div class="job-post-container">
+      <div class="job-post-header">
+        <h1>Edit your Job</h1>
+      </div>
+      <h2>about the position</h2>
+      <%= form_for [@employer, @job], html: { class: 'edit_job nice'} do |f| %>
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><%= f.label :title, "Job Title" %></td>
+              <td><%= f.text_field :title, :class => "input-text" %>"Reception" or "Cook"</td>
+            <tr>
+              <td><%= f.label :job_type %></td>
+              <td><%= f.select :job_type, Job::JOB_TYPES, :width => "300" %></td>
+            <tr>
+              <td><%= f.label :location %></td>
+              <td><%= f.text_field :location, :class => "input-text" %>"Phra Khanong, Bangkok", "Chaing Mai" or "Thailand"</td>
+            <tr>
+              <td><%= f.label :salary %></td>
+              <td><%= f.text_field :salary, :class => "input-text" %>"800 /day", "20,000 /m" or "20,000-30,000 /m"</td>
+          </tbody>
+        </table>
+      <div class="position-description">
+        <%= f.label :description %>
+        <%= f.text_area :description, :size => "50x6" %>
+      </div>
+      <span class="button-action">
+        <%= link_to "Back", :back, :class => "button radius" %>
+        <%= f.submit "Update", :class => "button radius" %>
+      </span>
+      <% end %>
+    </div>
+    <div class="job-edit-company">
+        <ul class="profile">
+          <li class="none"><h2><%= @job.employer.name %></h2></li>
+          <li class="none brand-logo"><%= image_tag @job.employer.image, width: "190" %></li>
+          <li><%= @job.employer.address %></li>
+          <li><%= @job.employer.telephone %></li>
+          <li><%= @job.employer.email %></li>
+          <li><%= @job.employer.url %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

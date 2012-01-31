@@ -41,6 +41,13 @@ div.header div.header-container h2 a {
 }
 /*
 --------------------------------------------------
+  CONTAINER
+--------------------------------------------------
+*/
+div.container {
+}
+/*
+--------------------------------------------------
 	CONTENT
 --------------------------------------------------
 */
@@ -105,4 +112,23 @@ div.header-menu span a.user img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+/*
+--------------------------------------------------
+  FOOTER
+--------------------------------------------------
+*/
+div.footer {
+  margin-bottom: 0px;
+}
+div.footer div.footer-container {
+  overflow: hidden;
+  margin: 0 auto 40px auto;
+  padding: 10px;
+}
+div.footer div.footer-container p {
+  float: right;
+  font-size: 10px;
+  color: #666;
+  margin: 0 0 5px 0;
 }
