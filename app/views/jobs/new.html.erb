@@ -12,23 +12,29 @@
             <tr>
               <td><%= f.label :title, "Job Title" %></td>
               <td><%= f.text_field :title, :class => "input-text" %>"Reception" or "Cook"</td>
+            </tr>
             <tr>
               <td><%= f.label :job_type %></td>
               <td><%= f.select :job_type, Job::JOB_TYPES, :width => "300" %></td>
+            </tr>
             <tr>
               <td><%= f.label :location %></td>
               <td><%= f.text_field :location, :class => "input-text" %>"Phra Khanong, Bangkok", "Chaing Mai" or "Thailand"</td>
+            </tr>
             <tr>
               <td><%= f.label :salary %></td>
               <td><%= f.text_field :salary, :class => "input-text" %>"800 /day", "20,000 /m" or "20,000-30,000 /m"</td>
+            </tr>
           </tbody>
         </table>
       <div class="position-description">
-        <%= f.label :description %>
-        <%= f.text_area :description, :size => "24x6" %>
+        <%= f.label :description do %>
+          <span>Description</span><span class="format-text">Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %></span>
+        <% end %>
+        <%= f.text_area :description, :size => "50x6" %>
       </div>
       <span class="button-action">
-        <%= f.submit "Publish", :class => "button radius" %>
+        <%= f.submit "Publish", :class => "medium button radius" %>
       </span>
       <% end %>
     </div>

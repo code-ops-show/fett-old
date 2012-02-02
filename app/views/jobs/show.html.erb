@@ -27,7 +27,7 @@
     <div class="row">
       <div class="twelve columns">
         <div class="job-container">
-          <p><%= simple_format @job.description %></p>
+          <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
         </div>
         <div class="job-aside">
           <ul>

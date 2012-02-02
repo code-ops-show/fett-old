@@ -1,14 +1,14 @@
 class JobsController < ApplicationController
   def index
     @employer = get_employer(params[:employer_id])
-  	@jobs = @employer.jobs
+    @jobs = @employer.jobs
   end
 
-	def show
-	  @job = Job.where(id: params[:id]).first
-	end
+  def show
+    @job = Job.where(id: params[:id]).first
+  end
 
-	def new
+  def new
     if current_user
       @employer = get_employer(params[:employer_id])
       @job = @employer.jobs.build
@@ -19,12 +19,12 @@ class JobsController < ApplicationController
 
   def create
     @employer = get_employer(params[:employer_id])
-  	@job = @employer.jobs.build(params[:job])
-  	if @job.save
-  		redirect_to root_path
-  	else
-  		render :action => "new"
-  	end
+    @job = @employer.jobs.build(params[:job])
+    if @job.save
+      redirect_to root_path
+    else
+      render :action => "new"
+    end
   end
 
   def edit
@@ -34,7 +34,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update_attributes(params[:job])
-       redirect_to :action => 'show', :id => @job
+       redirect_to job_path(@job)
     else
        @subjects = Subject.find(:all)
        render :action => 'edit'
