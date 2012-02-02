@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120124091848) do
+ActiveRecord::Schema.define(:version => 20120201105340) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -58,6 +58,26 @@ ActiveRecord::Schema.define(:version => 20120124091848) do
   end
 
   add_index "jobs", ["employer_id"], :name => "index_jobs_on_employer_id"
+
+  create_table "profiles", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "employer_id"
+  end
+
+  create_table "resumes", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "nationality"
+    t.string   "status"
+    t.string   "language"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.date     "dateofbirth"
+    t.integer  "employee_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

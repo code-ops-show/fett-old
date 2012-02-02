@@ -19,15 +19,15 @@
         <h4>Recent Jobs</h4>
         <ul>
           <% if @jobs.each do |j| %>
-          <li style="background-color: #fff">
-            <a href="<%= job_path(j) %>" style="display:block">
-            <span class="location"><b><%= j.location %></b></span>
-            <span class="title"><u><%= j.title %></u></span> at 
-            <span class="company"><%= j.employer.name rescue 'no employer name' %></span>
-            <span class="date"><%= j.created_at.strftime('%b %d') %></span>
-            <span class="salary"><%= j.salary %></span>
-            </a>
-          </li>
+            <%= content_tag_for :li, j do %>
+              <a href="<%= job_path(j) %>">
+              <span class="location"><b><%= j.location %></b></span>
+              <span class="title"><u><%= j.title %></u></span> at 
+              <span class="company"><%= j.employer.name rescue 'no employer name' %></span>
+              <span class="date"><%= j.created_at.strftime('%b %d') %></span>
+              <span class="salary"><%= j.salary %></span>
+              </a>
+            <% end %>
           <% end.empty? %>
            empty
           <% end %>

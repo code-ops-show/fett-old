@@ -13,6 +13,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'zurb-foundation'
 gem "rmagick"
 gem 'carrierwave'
+gem 'RedCloth'
 
 
 # Gems used only for assets and not required
@@ -26,14 +27,27 @@ end
 gem 'jquery-rails'
 
 
+#gem "rspec-rails", :group => [:test, :development]
+#group :test do
+#  gem "factory_girl_rails"
+#  gem 'shoulda-matchers'
+#  gem "capybara"
+#  gem "guard-rspec"
+#  gem 'rb-fsevent'
+#  gem 'growl_notify'
+#end
+
 gem "rspec-rails", :group => [:test, :development]
+gem 'jasmine', :group => [:development, :test]
 group :test do
   gem "factory_girl_rails"
   gem 'shoulda-matchers'
   gem "capybara"
+  gem 'database_cleaner'
   gem "guard-rspec"
   gem 'rb-fsevent'
-  gem 'growl_notify'
+  gem "spork", "> 0.9.0.rc"
+  gem "guard-spork"
 end
 
 # Use unicorn as the web server

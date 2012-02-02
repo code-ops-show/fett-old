@@ -9,9 +9,11 @@ Fett::Application.routes.draw do
   #resources :employees, :type => "Employee"
   resources :employer do
     resources :jobs
+    resources :profiles
   end
 
   resources :jobs
+  resources :profiles
 
   devise_for :users, :path_names => { :sign_up => "register", :sign_in => "login", :sign_out => "logout" }
   devise_for :employees, :skip => :sessions

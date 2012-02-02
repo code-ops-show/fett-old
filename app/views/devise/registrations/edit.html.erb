@@ -11,7 +11,7 @@
       <div class="twelve columns navigation">
         <ul class="user-nav">
           <li class="active"><%= link_to "Account" %><div class="bullet"></div></li>
-          <li><%= link_to "Profile" %><div class="bullet"></div></li>
+          <li><%= link_to "Profile", edit_employer_profile_path(current_user) %><div class="bullet"></div></li>
           <li><%= link_to "Jobs List" %><div class="bullet"></div></li>
         </ul>
       </div>
@@ -44,7 +44,7 @@
       <%= f.label :telephone %>
       <%= f.text_field :telephone, :class => "input-text" %>
 
-      <%= f.label :url %>
+      <%= f.label :url, "URL" %>
       <%= f.text_field :url, :class => "input-text" %>
       </div>
       <div class="four columns register-picture">
