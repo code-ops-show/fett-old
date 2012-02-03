@@ -7,15 +7,7 @@
         <%= devise_error_messages! %>
       </div>
     </div>
-    <div class="row">
-      <div class="twelve columns navigation">
-        <ul class="user-nav">
-          <li class="active"><%= link_to "Account" %><div class="bullet"></div></li>
-          <li><%= link_to "Profile", edit_employer_profile_path(current_user) %><div class="bullet"></div></li>
-          <li><%= link_to "Jobs List" %><div class="bullet"></div></li>
-        </ul>
-      </div>
-    </div>
+    <%= render "devise/menu/edit_nav_bar_items" %>
     <div class="row content-container">
       <div class="four columns register-account">
         <h2>Account</h2>

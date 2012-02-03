@@ -3,13 +3,15 @@ class ProfilesController < ApplicationController
   end
   def show
   	@profile = get_employer(params[:employer_id])
+  	@profile = @employer.profile
   end
   def new
   end
   def create
   end
   def edit
-  	@profile = Profile.find(params[:id])
+  	@employer = get_employer(params[:employer_id])
+  	@profile = @employer.profile
   end
   def update
   	@profile = Profile.find(params[:id])
@@ -24,6 +26,6 @@ class ProfilesController < ApplicationController
 
   private
   def get_employer(employer_id)
-    Employer.where(id: params[:employer_id]).first
+    Employer.where(id: employer_id).first
   end
 end

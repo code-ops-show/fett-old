@@ -9,7 +9,7 @@ Fett::Application.routes.draw do
   #resources :employees, :type => "Employee"
   resources :employer do
     resources :jobs
-    resources :profiles
+    resource :profile
   end
 
   resources :jobs

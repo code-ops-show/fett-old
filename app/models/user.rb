@@ -11,6 +11,4 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   USER_TYPES = %w[Employee Employer]
-
-
 end
