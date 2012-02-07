@@ -1,0 +1,59 @@
+<!-- new -->
+
+      <div class="four columns register-information">
+        <h2>Information</h2>
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "input-text" %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address, :class => "input-text" %>
+
+        <%= f.label :telephone %>
+        <%= f.text_field :telephone, :class => "input-text" %>
+
+        <%= f.label :url, "URL" %>
+        <%= f.text_field :url, :class => "input-text" %>
+      </div>
+      <div class="four columns register-picture">
+        <h2>Avatar, Logo</h2>
+        <label>Browse from your drive</label>
+        <%= f.file_field :image %>
+        <br /><br />
+        <p>Optional — Your company logo will appear at the top of your listing.
+190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>
+        <p>Your company logo (will be resized to < 200x100px)</p>
+      </div>
+
+<!-- edit -->
+
+      <div class="four columns register-information">
+        <h2>Information</h2>
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => "input-text" %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, :class => "input-text" %>
+
+      <%= f.label :telephone %>
+      <%= f.text_field :telephone, :class => "input-text" %>
+
+      <%= f.label :url, "URL" %>
+      <%= f.text_field :url, :class => "input-text" %>
+      </div>
+      <div class="four columns register-picture">
+        <% if current_user.type == 'Employer' %>
+          <h2>Company Logo</h2>
+          <%= image_tag current_user.image_url, :width => "128" %>
+          <label>Browse from your drive</label>
+          <%= f.file_field :image %>
+          <br /><br />
+          <p>Optional — Your company logo will appear at the top of your listing. 190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>
+        <% else %>
+          <h2>Avatar</h2>
+          <%= image_tag current_user.image_url, :width => "64" %>
+          <label>Browse from your drive</label>
+          <%= f.file_field :image %>
+          <br /><br />
+          <p>Your avartar logo (will be resized to < 200x100px)</p>
+        <% end %>
+      </div>

@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   USER_TYPES = %w[Employee Employer]
+
+	after_create :create_profile, if: Proc.new { |u|  u.type == 'Employer' }
+
+  def create_profile
+    profile = Profile.new
+    profile.employer_id = self.id
+    profile.save
+  end
 end

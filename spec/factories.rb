@@ -21,5 +21,6 @@ end
 Factory.define :user do |user|
   user.sequence(:name) { |n| "Test User #{n}" }
   user.sequence(:email) { |n| "email#{n}@testuser.com" }
+  user.type %w[Employee Employer]
   user.password "secretsss"
 end
