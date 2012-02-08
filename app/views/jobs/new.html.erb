@@ -40,12 +40,12 @@
     </div>
     <div class="job-edit-company">
         <ul class="profile">
-          <li class="none"><h2><%= @job.employer.name %></h2></li>
-          <li class="none brand-logo"><%= image_tag @job.employer.image, width: "190" %></li>
-          <li><%= @job.employer.address %></li>
-          <li><%= @job.employer.telephone %></li>
-          <li><%= @job.employer.email %></li>
-          <li><%= @job.employer.url %></li>
+          <li class="none"><h2><%= @employer.profile.name %></h2></li>
+          <li class="none brand-logo"><%= image_avatar(current_user, true, '190') %></li>
+          <li><%= @employer.profile.address %></li>
+          <li><%= @employer.profile.telephone %></li>
+          <li><%= @employer.email %></li>
+          <li><%= @employer.profile.url %></li>
         </ul>
       </div>
   </div>

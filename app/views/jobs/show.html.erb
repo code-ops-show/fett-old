@@ -1,55 +1,55 @@
 <div class="row">
-  <div class="nav-link">
-      <p style="float:right"><%= link_to "Edit job", edit_job_path %></p>
+  <div class="twelve columns">
+      <p class="right"><%= link_to "Edit job", edit_job_path %></p>
       <p><%= link_to "Back to all jobs", root_path %></p>
   </div>
 </div>
+
 <div class="row">
-  <div class="content">
-    <div class="job-header">
-      <div class="row">
-        <div class="twelve columns">
-          <div class="job-header-container">
-            <h1><%= @job.title %></h1>
-            <h3>Posted <%= @job.created_at.strftime('%b %d') %></h3>
-            <h2>
-              <span class="company"><%= @job.employer.name %></span><br />
-              <span class="location">Location: <%= @job.location %></span><br />
-              <%= link_to @job.employer.url, @job.employer.url %>
-            </h2>
-          </div>
-          <div class="job-header-logo">
-            <%= image_tag @job.employer.image_url.to_s, :width => "190" %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
-        <div class="job-container">
-          <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
-        </div>
-        <div class="job-aside">
-          <ul>
-            <li><span class="head">Salary</span><span class="data"><%= @job.salary %></span></li>
-            <li><span class="head">Job Type</span><span class="data"><%= @job.job_type %></span></li>
-          </ul>
-          <%= link_to "Add to shortlist", '', :class => "button" %> <br />
-        </div>
-        <div class="clearfix"></div>
-        <div class="job-apply">
-          <div class="job-apply-info">
-            <h3>Company Information</h3>
-            <span>Email</span> <%= @job.employer.email %><br />
-            <span>Telephone</span> <%= @job.employer.telephone %><br />
-          </div>
-          <div class="job-apply-field">
-            <h3>Apply for this position</h3>
-            <%= link_to "Apply now", "", :class => "button" %>
-          </div>
-          <h3 class="separator"><span>OR</span></h3> 
-        </div>
-      </div>
-    </div>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="nine columns">
+    <h4><%= @job.title %></h4>
+    <p>Posted <%= @job.created_at.strftime('%b %d') %></p>
+    <p>
+      <%= @job.employer.profile.name %><br />
+      Location: <%= @job.location %><br />
+      <%= link_to @job.employer.profile.url, @job.employer.profile.url %>
+    <p>
+  </div>
+  <div class="three columns">
+    <%= image_avatar(@job.employer, false, '190') %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="nine columns">
+    <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
+  </div>
+  <div class="three columns">
+    <ul>
+      <li>Salary <%= @job.salary %></li>
+      <li>Job Type <%= @job.job_type %></li>
+    </ul>
+    <%= link_to "Add to shortlist", '', :class => "button radius" %> <br />
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+</div>
+
+<div class="row">
+  <div class="six columns">
+    <h5>Apply for this position</h5>
+    <br>
+    <%= link_to "Apply now", "", :class => "button radius" %>
+  </div>
+  <div class="six columns">
+    <h5>Company Information</h5>
+    <span>Email</span> <%= @job.employer.email %><br />
+    <span>Telephone</span> <%= @job.employer.profile.telephone %><br />
   </div>
 </div>

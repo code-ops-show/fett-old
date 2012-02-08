@@ -9,34 +9,36 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
+    <header>
+      <div class="container">
         <div class="row">
-          <div class="eight columns header-container">
-            <h2><%= link_to "Job Board", root_path %></h2>
+          <div class="eight columns">
+            <h3><%= link_to "Job Board", root_path %></h3>
           </div>
-          <div class="four columns header-account">
-            <div class="header-menu">
-              <%= render 'devise/menu/registration_items' %>
-            </div>
+          <div class="four columns">
+            <%= render 'devise/menu/registration_items' %>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="twelve columns">
-          <% flash.each do |name, msg| %>
-            <%= content_tag(:div, :class => "alert-box") do %>
-              <%= msg %>
-              <%= link_to("x", "", :class => "close") %>
-            <% end %>
+    </header>
+    <div class="row">
+      <div class="twelve columns">
+        <% flash.each do |name, msg| %>
+          <%= content_tag(:div, :class => "alert-box") do %>
+            <%= msg %>
+            <%= link_to("x", "", :class => "close") %>
           <% end %>
-        </div>
-      </div>
-      <% #<%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
-      <div class="row footer">
-        <div class="footer-container"><p>artellectual.com</p></div>
+        <% end %>
       </div>
     </div>
+    <% #<%= content_tag :h1, yield(:title) if show_title? %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer class="row">
+      <section class="twelve columns">
+        <p class="right">artellectual.com</p>
+      </section>
+    </footer>
   </body>
 </html>

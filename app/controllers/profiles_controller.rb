@@ -14,9 +14,10 @@ class ProfilesController < ApplicationController
   	@profile = @employer.profile
   end
   def update
-  	@profile = Profile.find(params[:id])
-  	if @profile.update_attributes(:profile)
-  		redirect_to edit_employer_profile_path(@profile)
+    @employer = get_employer(params[:employer_id])
+  	@profile = @employer.profile
+  	if @profile.update_attributes(params[:profile])
+  		redirect_to edit_employer_profile_path(@employer)
   	else
   		render :action => "edit"
   	end

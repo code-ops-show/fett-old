@@ -1,6 +1,32 @@
 <div class="row">
-  <div class="twelve columns content">
-    edit [profile]
-    <%= render "devise/menu/edit_nav_bar_items" %>
+  <div class="twelve">
+    <h4>Edit Profile</h4>
+  </div>
+</dv>
+<%= render "devise/menu/edit_nav_bar_items" %>
+<%= form_for [@employer, @profile], html: { class: 'edit_profile nice' } do |f| %>
+<div class="row">
+  <div class="five columns offset-by-one">
+    <%= f.label "name" %>
+    <%= f.text_field "name", class: "input-text" %>
+
+    <%= f.label "telephone" %>
+    <%= f.text_field "telephone", class: "input-text" %>
+
+    <%= f.label "address" %>
+    <%= f.text_field "address", class: "input-text"%>
+
+    <%= f.label "url", "URL" %>
+    <%= f.text_field "url", class: "input-text" %>
+
+    <%= f.label "description" %>
+    <%= f.text_area "description" %>
   </div>
 </div>
+<div class="row">
+  <div class="twelve columns">
+    <%= link_to "Back", :back, :class => "medium button radius" %>
+    <%= f.submit "Update", :class => "medium button radius" %>
+  </div>
+</div>
+<% end %>

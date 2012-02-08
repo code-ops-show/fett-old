@@ -1,59 +1,64 @@
 <% title "Edit Job" %>
 <div class="row">
-  <div class="nav-link">
-    <p><%= link_to "Back to show job", :back %></p>
+  <div class="twelve columns">
+    <%= link_to "Back to show job", :back %>
   </div>
 </div>
-<div class="row content">
+
+<div class="row">
+  <hr>
+</div>
+
+<div class="row">
   <div class="twelve columns">
-    <div class="job-post-container">
-      <div class="job-post-header">
-        <h1>Edit your Job</h1>
-      </div>
-      <h2>about the position</h2>
-      <%= form_for [@employer, @job], html: { class: 'edit_job nice'} do |f| %>
-        <table cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td><%= f.label :title, "Job Title" %></td>
-              <td><%= f.text_field :title, :class => "input-text" %>"Reception" or "Cook"</td>
-            </tr>
-            <tr>
-              <td><%= f.label :job_type %></td>
-              <td><%= f.select :job_type, Job::JOB_TYPES, :width => "300" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :location %></td>
-              <td><%= f.text_field :location, :class => "input-text" %>"Phra Khanong, Bangkok", "Chaing Mai" or "Thailand"</td>
-            </tr>
-            <tr>
-              <td><%= f.label :salary %></td>
-              <td><%= f.text_field :salary, :class => "input-text" %>"800 /day", "20,000 /m" or "20,000-30,000 /m"</td>
-            </tr>
-           </tbody>
-        </table>
-      <div class="position-description">
-        <%= f.label :description do %>
-          <span>Description</span><span class="format-text">Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %></span>
-        <% end %>
-        <%= f.text_area :description, :size => "50x6" %>
-      </div>
-      <span class="button-action">
-        <%= link_to "Back", :back, :class => "button radius" %>
-        <%= f.submit "Update", :class => "medium button radius" %>
-      </span>
+    <h4>Edit your Job</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="seven columns">
+    <h5>about the position</h5>
+    <%= form_for [@employer, @job], html: { class: 'edit_job nice'} do |f| %>
+      <table cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td><%= f.label :title, "Job Title" %></td>
+            <td><%= f.text_field :title, :class => "input-text" %>"Reception" or "Cook"</td>
+          </tr>
+          <tr>
+            <td><%= f.label :job_type %></td>
+            <td><%= f.select :job_type, Job::JOB_TYPES, :width => "300" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :location %></td>
+            <td><%= f.text_field :location, :class => "input-text" %>"Phra Khanong, Bangkok", "Chaing Mai" or "Thailand"</td>
+          </tr>
+          <tr>
+            <td><%= f.label :salary %></td>
+            <td><%= f.text_field :salary, :class => "input-text" %>"800 /day", "20,000 /m" or "20,000-30,000 /m"</td>
+          </tr>
+         </tbody>
+      </table>
+    <div class="description">
+      <%= f.label :description do %>
+        Description Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %>
       <% end %>
+      <%= f.text_area :description, :size => "50x6" %>
     </div>
-    <div class="job-edit-company">
-        <ul class="profile">
-          <li class="none"><h2><%= @job.employer.name %></h2></li>
-          <li class="none brand-logo"><%= image_tag @job.employer.image, width: "190" %></li>
-          <li><%= @job.employer.address %></li>
-          <li><%= @job.employer.telephone %></li>
-          <li><%= @job.employer.email %></li>
-          <li><%= @job.employer.url %></li>
-        </ul>
-      </div>
-    </div>
+    <span class="button-action">
+      <%= link_to "Back", :back, :class => "button radius" %>
+      <%= f.submit "Update", :class => "medium button radius" %>
+    </span>
+    <% end %>
+  </div>
+  <div class="four columns offset-by-one">
+    <ul class="profile">
+      <li><h5><%= @job.employer.profile.name %></h5></li>
+      <li><%= image_avatar(@job.employer, true, "190") %></li>
+      <li><%= @job.employer.profile.address %></li>
+      <li><%= @job.employer.profile.telephone %></li>
+      <li><%= @job.employer.email %></li>
+      <li><%= @job.employer.profile.url %></li>
+    </ul>
   </div>
 </div>

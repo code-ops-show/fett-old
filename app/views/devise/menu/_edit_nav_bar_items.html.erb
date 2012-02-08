@@ -1,16 +1,13 @@
 <div class="row">
-  <div class="twelve columns navigation">
-    <ul class="user-nav">
-      <li class="active"><%= link_to "Account" %><div class="bullet"></div></li>
-      <li>
-        <% if current_user.profile %>
-          <%= link_to "Profile", edit_employer_profile_path(current_user) %>
-        <% else %>
-          <%= link_to "New Profile", new_employer_profile_path(current_user) %>
-        <% end %>
-        <div class="bullet"></div>
-      </li>
-      <li><%= link_to "Jobs List", employer_jobs_path(current_user) %><div class="bullet"></div></li>
-    </ul>
+  <div class="twelve columns">
+    <dl class="nice contained tabs">
+      <%= nav_link("Account", edit_user_registration_path) %>
+      <% if current_user.profile %>
+      <%= nav_link("Profile", edit_employer_profile_path(current_user)) %>
+      <% else %>
+      <%= nav_link("New Profile", new_employer_profile_path(current_user)) %>
+      <% end %>
+      <%= nav_link("Jobs List", employer_jobs_path(current_user)) %>
+    </dl>
   </div>
 </div>

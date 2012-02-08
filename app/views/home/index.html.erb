@@ -1,38 +1,39 @@
 <div class="row">
-  <div class="content">
-    <div class="row">
-      <div class="nav">
-        <div class="eight columns search-jobs">
-        <input type="text" placeholder="Search" />
-        </div>
-        <div class="four columns add-jobs">
-          <% if current_user %>
-          <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button" %>
-          <% else %>
-          <%= link_to "Post a job", new_job_path, :class => "medium button" %>
-          <% end %>
-        </div>
-      </div>
+  <div class="row">
+    <div class="nine columns">
+    <%= text_field_tag "search", nil, class: "input-text", placeholder: "Search" %>
     </div>
-    <div class="row">
-      <div class="twelve columns jobs">
-        <h4>Recent Jobs</h4>
-        <ul>
-          <% if @jobs.each do |j| %>
-            <%= content_tag_for :li, j do %>
-              <a href="<%= job_path(j) %>">
-              <span class="location"><b><%= j.location %></b></span>
-              <span class="title"><u><%= j.title %></u></span> at 
-              <span class="company"><%= j.employer.name rescue 'no employer name' %></span>
-              <span class="date"><%= j.created_at.strftime('%b %d') %></span>
-              <span class="salary"><%= j.salary %></span>
-              </a>
-            <% end %>
-          <% end.empty? %>
-           empty
+    <div class="three columns">
+      <p class="right">
+        <% if current_user %>
+        <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button" %>
+        <% else %>
+        <%= link_to "Post a job", new_job_path, :class => "medium button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <hr>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h4>Recent Jobs</h4>
+      <ul>
+        <% if @jobs.each do |j| %>
+          <%= content_tag_for :li, j do %>
+            <a href="<%= job_path(j) %>">
+            <span class="location"><b><%= j.location %></b></span>
+            <span class="title"><u><%= j.title %></u></span> at 
+            <span class="company"><%= j.employer.profile.name rescue 'no employer name' %></span>
+            <span class="date"><%= j.created_at.strftime('%b %d') %></span>
+            <span class="salary"><%= j.salary %></span>
+            </a>
           <% end %>
-        </ul>
-      </div>
+        <% end.empty? %>
+         empty
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
