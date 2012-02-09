@@ -1,7 +1,7 @@
 <div class="row">
   <div class="twelve columns">
       <p class="right"><%= link_to "Edit job", edit_job_path %></p>
-      <p><%= link_to "Back to all jobs", root_path %></p>
+      <p><%= link_to "Back to jobs listing", root_path %></p>
   </div>
 </div>
 
@@ -11,29 +11,17 @@
 
 <div class="row">
   <div class="nine columns">
-    <h4><%= @job.title %></h4>
-    <p>Posted <%= @job.created_at.strftime('%b %d') %></p>
-    <p>
-      <%= @job.employer.profile.name %><br />
+    <div class="pad">
+      <h4><%= @job.title %></h4>
+      <p><medium>Posted <%= @job.created_at.strftime('%b %d') %></medium></p>
+      
+      <h6><strong><%= @job.employer.profile.name %></strong><br />
       Location: <%= @job.location %><br />
-      <%= link_to @job.employer.profile.url, @job.employer.profile.url %>
-    <p>
+      <%= link_to @job.employer.profile.url, @job.employer.profile.url %></h6>
+    </div>
   </div>
   <div class="three columns">
-    <%= image_avatar(@job.employer, false, '190') %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="nine columns">
-    <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
-  </div>
-  <div class="three columns">
-    <ul>
-      <li>Salary <%= @job.salary %></li>
-      <li>Job Type <%= @job.job_type %></li>
-    </ul>
-    <%= link_to "Add to shortlist", '', :class => "button radius" %> <br />
+    <%= image_avatar(@job.employer, false, '150') %>
   </div>
 </div>
 
@@ -41,15 +29,29 @@
   <hr>
 </div>
 
-<div class="row">
-  <div class="six columns">
-    <h5>Apply for this position</h5>
-    <br>
-    <%= link_to "Apply now", "", :class => "button radius" %>
+<div class="row job">
+  <div class="nine columns">
+    <div class="job-description pad"><%= RedCloth.new(@job.description).to_html.html_safe %></div>
   </div>
-  <div class="six columns">
-    <h5>Company Information</h5>
-    <span>Email</span> <%= @job.employer.email %><br />
-    <span>Telephone</span> <%= @job.employer.profile.telephone %><br />
+  <div class="three columns">
+    <ul class="job-aside">
+      <li class="top"><strong>Salary</strong> <%= @job.salary %></li>
+      <li><strong>Job Type</strong> <%= @job.job_type %></li>
+    </ul>
+    <%= link_to "Add to shortlist", '', :class => "button radius" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="job apply">
+    <div class="six columns">
+      <h5>Apply for this position</h5><br />
+      <%= link_to "Apply now", "", :class => "button radius" %>
+    </div>
+    <div class="six columns">
+      <h5>Company Information</h5>
+      <b>Email</b> <%= @job.employer.email %><br />
+      <b>Telephone</b> <%= @job.employer.profile.telephone %><br />
+    </div>
   </div>
 </div>

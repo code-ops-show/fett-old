@@ -2,6 +2,7 @@
 <div class="row">
   <div class="twelve columns">
     <h4>Edit <%= resource_name.to_s.humanize %></h4>
+    <hr>
     <%= devise_error_messages! %>
   </div>
 </div>
@@ -39,7 +40,11 @@
       <p>Optional — Your company logo will appear at the top of your listing. 190px wide is optimal. We'll resize automatically if it's wider than 190px.</p>
     <% else %>
       <h5>Avatar</h5>
-      <%= image_tag current_user.image_url, :width => "64" %>
+      <% if current_user.image_url.nil? %>
+      <%= image_tag "avatar/guest_avatar.gif" %>
+      <% else %>
+      <%= image_tag current_user.image_url.to_s, :width => "64" %>
+      <% end %>
       <label>Browse from your drive</label>
       <%= f.file_field :image %>
       <br /><br />

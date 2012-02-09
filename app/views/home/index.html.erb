@@ -1,34 +1,30 @@
 <div class="row">
-  <div class="row">
-    <div class="nine columns">
+  <div class="nine columns">
+  <%= form_tag "/", class: "nice" do %>
     <%= text_field_tag "search", nil, class: "input-text", placeholder: "Search" %>
-    </div>
-    <div class="three columns">
-      <p class="right">
-        <% if current_user %>
-        <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button" %>
-        <% else %>
-        <%= link_to "Post a job", new_job_path, :class => "medium button" %>
-        <% end %>
-      </p>
+  <% end -%>
+  </div>
+  <div class="three columns">
+    <div class="right">
+      <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button radius" if current_user and current_user.type == 'Employer' %>
     </div>
   </div>
-  <div class="row">
-    <hr>
-  </div>
+</div>
+<div class="jobs-listing">
   <div class="row">
     <div class="twelve columns">
       <h4>Recent Jobs</h4>
       <ul>
         <% if @jobs.each do |j| %>
           <%= content_tag_for :li, j do %>
-            <a href="<%= job_path(j) %>">
-            <span class="location"><b><%= j.location %></b></span>
-            <span class="title"><u><%= j.title %></u></span> at 
-            <span class="company"><%= j.employer.profile.name rescue 'no employer name' %></span>
+            <%= link_to job_path(j) do %>
+            <span class="green radius label">new</span>
+            <span class="job location"><b><%= j.location %></b></span>
+            <span class="job title"><u><%= j.title %></u></span> at 
+            <span class="job company"><%= j.employer.profile.name rescue 'no employer name' %></span>
             <span class="date"><%= j.created_at.strftime('%b %d') %></span>
-            <span class="salary"><%= j.salary %></span>
-            </a>
+            <span class="job salary"><%= j.salary %></span>
+            <% end %>
           <% end %>
         <% end.empty? %>
          empty

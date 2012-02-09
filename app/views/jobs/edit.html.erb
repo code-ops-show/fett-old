@@ -1,25 +1,16 @@
 <% title "Edit Job" %>
 <div class="row">
   <div class="twelve columns">
-    <%= link_to "Back to show job", :back %>
-  </div>
-</div>
-
-<div class="row">
-  <hr>
-</div>
-
-<div class="row">
-  <div class="twelve columns">
-    <h4>Edit your Job</h4>
+    <%= link_to "Back to job", :back %>
+    <h4 class="job-header">Edit your Job</h4>
   </div>
 </div>
 
 <div class="row">
   <div class="seven columns">
-    <h5>about the position</h5>
+    <h5 class="job-header">tell us about the position</h5>
     <%= form_for [@employer, @job], html: { class: 'edit_job nice'} do |f| %>
-      <table cellpadding="0" cellspacing="0">
+      <table width="100%" cellpadding="0" cellspacing="0">
         <tbody>
           <tr>
             <td><%= f.label :title, "Job Title" %></td>
@@ -41,24 +32,25 @@
       </table>
     <div class="description">
       <%= f.label :description do %>
-        Description Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %>
+        Description
+        <span class="right">Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %></span>
       <% end %>
-      <%= f.text_area :description, :size => "50x6" %>
-    </div>
-    <span class="button-action">
+      <%= f.text_area :description, :size => "60x18" %>
+
       <%= link_to "Back", :back, :class => "button radius" %>
       <%= f.submit "Update", :class => "medium button radius" %>
-    </span>
+    </div>
     <% end %>
   </div>
-  <div class="four columns offset-by-one">
-    <ul class="profile">
+  <div class="three columns offset-by-one company-detail">
+    <ul>
       <li><h5><%= @job.employer.profile.name %></h5></li>
-      <li><%= image_avatar(@job.employer, true, "190") %></li>
+      <li><%= image_avatar(current_user, true, '190') %></li>
+      <li><hr></li>
       <li><%= @job.employer.profile.address %></li>
       <li><%= @job.employer.profile.telephone %></li>
-      <li><%= @job.employer.email %></li>
-      <li><%= @job.employer.profile.url %></li>
+      <li><%= link_to @job.employer.email, "emailto:" + @job.employer.email %></li>
+      <li><%= link_to @job.employer.profile.url, @job.employer.profile.url %></li>
     </ul>
   </div>
 </div>

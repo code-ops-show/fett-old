@@ -1,0 +1,109 @@
+/*
+--------------------------------------------------
+  JOB COMMON CLASS USE
+--------------------------------------------------
+*/
+.pad {
+  margin-left: 20px;
+}
+/*
+--------------------------------------------------
+  JOB SHOW
+--------------------------------------------------
+*/
+.job, .job p {
+  font-size: 1.4rem;
+  line-height: 1.5em;
+  color: #000;
+}
+/*
+--------------------------------------------------
+  JOB HEADER
+--------------------------------------------------
+*/
+h4.job-header {
+  background-color: #F3F3F4;
+  padding: 15px 20px;
+  margin: 20px 0;
+}
+h5.job-header {
+  padding-left: 20px;
+}
+/*
+--------------------------------------------------
+  JOB DESCRIPTION
+--------------------------------------------------
+*/
+div.job-description {
+  margin-right: 50px;
+}
+div.job-description ul {
+  list-style: disc outside;
+  margin-left: 25px;
+  padding: 0;
+}
+div.job-description ul li {
+  margin-bottom: 0;
+}
+div.job-description ol li {
+  margin-bottom: 0;
+}
+/*
+--------------------------------------------------
+  JOB ASIDE
+--------------------------------------------------
+*/
+ul.job-aside li {
+  margin-bottom: 0;
+  padding: 10px;
+}
+ul.job-aside li {
+  border-top: 1px solid #ccc;
+}
+ul.job-aside li.top {
+  border-top: none;
+}
+/*
+--------------------------------------------------
+  FORM NEW, EDIT JOB
+--------------------------------------------------
+*/
+form.new_job, 
+form.edit_job {
+  padding: 5px 0 0 10px;
+}
+form.new_job table, 
+form.edit_job table {
+  border: none;
+  margin-left: 15px;
+}
+form.new_job table input, 
+form.edit_job table input {
+  margin-bottom: 5px
+}
+form.new_job div.description, 
+form.edit_job div.description {
+  padding: 0 15px 0 25px;
+}
+form.new_job div.description span, 
+form.edit_job div.description span {
+  padding-bottom: 5px;
+}
+form.new_job div.description textarea, 
+form.edit_job div.description textarea {
+  width: auto;
+}
+div.company-detail {
+  padding: 10px 20px;
+  background-color: #F0F6FC;
+  color: black;
+}
+div.company-detail li {
+  margin-bottom: 8px;
+}
+div.job.apply {
+  overflow: hidden;
+  background-color: #fcf4db;
+  margin: 20px 0 0 20px;
+  padding: 20px;
+}

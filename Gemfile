@@ -48,6 +48,7 @@ group :test do
   gem 'rb-fsevent'
   gem "spork", "> 0.9.0.rc"
   gem "guard-spork"
+  gem "launchy"
 end
 
 # Use unicorn as the web server

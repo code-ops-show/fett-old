@@ -13,7 +13,7 @@
       <div class="container">
         <div class="row">
           <div class="eight columns">
-            <h3><%= link_to "Job Board", root_path %></h3>
+            <h1><%= link_to "Job Board", root_path %></h1>
           </div>
           <div class="four columns">
             <%= render 'devise/menu/registration_items' %>
@@ -24,7 +24,7 @@
     <div class="row">
       <div class="twelve columns">
         <% flash.each do |name, msg| %>
-          <%= content_tag(:div, :class => "alert-box") do %>
+          <%= content_tag(:div, :class => "success alert-box") do %>
             <%= msg %>
             <%= link_to("x", "", :class => "close") %>
           <% end %>

@@ -1,0 +1,66 @@
+/*
+--------------------------------------------------
+  COMMON
+--------------------------------------------------
+*/
+body {
+  font-family : "Lucida Sans";
+}
+/*
+--------------------------------------------------
+  HEADER
+--------------------------------------------------
+*/
+header { 
+  background-color: #333;
+  padding: 12px 0px 10px;
+  margin-bottom: 30px;
+}
+header a, header a:hover {
+  color: white;
+}
+header h1 {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+/*
+--------------------------------------------------
+  NAV < HEADER
+--------------------------------------------------
+*/
+nav {
+  padding-top: 0px;
+}
+nav ul li {
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+nav ul li img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+/*
+--------------------------------------------------
+  FOOTER
+--------------------------------------------------
+*/
+footer.row {
+  margin-top: 30px;
+  padding-top: 0;
+  background-color: #eee;
+}
+footer.row p {
+  margin: 0;
+  padding: 10px 20px;
+  color: #555;
+}
+/*
+--------------------------------------------------
+  HACK ZURB
+--------------------------------------------------
+*/
+div.alert-box {
+}

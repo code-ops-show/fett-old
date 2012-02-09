@@ -12,14 +12,11 @@ Factory.define :profile do |profile|
 end
 
 Factory.define :employer do |employer|
-  employer.sequence(:name) { |n| "Test Employer #{n}" }
   employer.sequence(:email) { |n| "email#{n}@testemployer.com" }
   employer.password "secretsss"
-  employer.association :profile
 end
 
 Factory.define :user do |user|
-  user.sequence(:name) { |n| "Test User #{n}" }
   user.sequence(:email) { |n| "email#{n}@testuser.com" }
   user.type %w[Employee Employer]
   user.password "secretsss"
