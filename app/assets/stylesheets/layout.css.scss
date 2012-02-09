@@ -6,6 +6,25 @@
 body {
   font-family : "Lucida Sans";
 }
+textarea {
+  width: auto;
+}
+h4.edit-header {
+  background-color: #F3F3F4;
+  padding: 15px 20px;
+  margin: 10px 0 20px 0;
+}
+.user-nav-bar {
+  margin-bottom: 20px;
+}
+.company-detail {
+  padding: 10px 20px;
+  background-color: #F0F6FC;
+  color: black;
+}
+.company-detail li {
+  margin-bottom: 8px;
+}
 /*
 --------------------------------------------------
   HEADER

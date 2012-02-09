@@ -1,32 +1,54 @@
 <div class="row">
-  <div class="twelve">
-    <h4>Edit Profile</h4>
-  </div>
-</dv>
-<%= render "devise/menu/edit_nav_bar_items" %>
-<%= form_for [@employer, @profile], html: { class: 'edit_profile nice' } do |f| %>
-<div class="row">
-  <div class="five columns offset-by-one">
-    <%= f.label "name" %>
-    <%= f.text_field "name", class: "input-text" %>
-
-    <%= f.label "telephone" %>
-    <%= f.text_field "telephone", class: "input-text" %>
-
-    <%= f.label "address" %>
-    <%= f.text_field "address", class: "input-text"%>
-
-    <%= f.label "url", "URL" %>
-    <%= f.text_field "url", class: "input-text" %>
-
-    <%= f.label "description" %>
-    <%= f.text_area "description" %>
-  </div>
-</div>
-<div class="row">
   <div class="twelve columns">
-    <%= link_to "Back", :back, :class => "medium button radius" %>
-    <%= f.submit "Update", :class => "medium button radius" %>
+    <h4 class="edit-header">Edit Profile</h4>
   </div>
 </div>
-<% end %>
+
+<%= render "devise/menu/edit_nav_bar_items" %>
+
+<div class="row">
+  <div class="seven columns">
+      <%= form_for [@employer, @profile], html: { class: 'edit_profile nice' } do |f| %>
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td><%= f.label "name" %></td>
+            <td><%= f.text_field "name", class: "input-text" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label "address" %></td>
+            <td><%= f.text_field "address", class: "input-text" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label "telephone" %></td>
+            <td><%= f.text_field "telephone", class: "input-text" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label "url", "URL" %></td>
+            <td><%= f.text_field "url", class: "input-text" %></td>
+          </tr>
+         </tbody>
+      </table>
+      <div class="description">
+        <%= f.label :description do %>
+          Description
+          <span class="right">Format text with <%= link_to "Textile", "http://en.wikipedia.org/wiki/Textile_(markup_language)", target: "_blank" %></span>
+        <% end %>
+        <%= f.text_area :description, :size => "60x18" %>
+    
+        <%= link_to "Back", :back, :class => "medium button radius" %>
+        <%= f.submit "Update", :class => "medium button radius" %>
+      </div>
+      <% end %>
+  </div>
+  <div class="three columns offset-by-one company-detail">
+    <ul>
+      <li><h5><%= @employer.profile.name %></h5></li>
+      <li><%= image_avatar(current_user, true, '190') %></li>
+      <li><hr></li>
+      <li><%= @employer.profile.address %></li>
+      <li><%= @employer.profile.telephone %></li>
+      <li><%= link_to @employer.profile.url, @employer.profile.url %></li>
+    </ul>
+  </div>
+</div>

@@ -7,6 +7,14 @@ module ApplicationHelper
 		end
 	end
 
+  def flash_class(name)
+    if name == :error or name == :alert
+      'error'
+    elsif name == :notice or name == :success
+      'success'
+    end
+  end
+
   def image_avatar(avatar, show, width)
     if avatar.image_url.nil?
       if !show.blank?

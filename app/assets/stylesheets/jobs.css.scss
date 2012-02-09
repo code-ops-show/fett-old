@@ -21,11 +21,6 @@
   JOB HEADER
 --------------------------------------------------
 */
-h4.job-header {
-  background-color: #F3F3F4;
-  padding: 15px 20px;
-  margin: 20px 0;
-}
 h5.job-header {
   padding-left: 20px;
 }
@@ -70,6 +65,7 @@ ul.job-aside li.top {
 */
 form.new_job, 
 form.edit_job {
+  margin-bottom: 0;
   padding: 5px 0 0 10px;
 }
 form.new_job table, 
@@ -93,17 +89,9 @@ form.new_job div.description textarea,
 form.edit_job div.description textarea {
   width: auto;
 }
-div.company-detail {
-  padding: 10px 20px;
-  background-color: #F0F6FC;
-  color: black;
-}
-div.company-detail li {
-  margin-bottom: 8px;
-}
 div.job.apply {
   overflow: hidden;
   background-color: #fcf4db;
-  margin: 20px 0 0 20px;
+  margin: 20px 20px 0 20px;
   padding: 20px;
 }
