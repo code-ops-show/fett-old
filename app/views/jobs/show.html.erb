@@ -1,6 +1,8 @@
 <div class="row">
   <div class="twelve columns">
-      <p class="right"><%= link_to "Edit job", edit_job_path %></p>
+      <% if @job.employer == current_user and current_user.type == 'Employer' %>
+      <p class="right"><%= link_to "Edit job", edit_employer_job_path(current_user) %></p>
+      <% end %>
       <p><%= link_to "Back to jobs listing", root_path %></p>
   </div>
 </div>
@@ -17,7 +19,7 @@
       
       <h6><strong><%= @job.employer.profile.name %></strong><br />
       Location: <%= @job.location %><br />
-      <%= link_to @job.employer.profile.url, @job.employer.profile.url %></h6>
+      <%= link_to @job.employer.profile.url, @job.employer.profile.url if @job.employer.profile.url.present? %></h6>
     </div>
   </div>
   <div class="three columns">

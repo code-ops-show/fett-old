@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
+  before_filter :authenticate_user!, only: [:edit, :create, :destroy, :update]
   def index
     @employer = get_employer(params[:employer_id])
     @jobs = @employer.jobs
+    #@jobs = Job.all
   end
 
   def show
@@ -28,7 +30,8 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+    @employer = get_employer(params[:employer_id])
+    @job = @employer.jobs.find(params[:id])
   end
 
   def update
@@ -36,7 +39,6 @@ class JobsController < ApplicationController
     if @job.update_attributes(params[:job])
        redirect_to job_path(@job)
     else
-       @subjects = Subject.find(:all)
        render :action => 'edit'
     end
   end

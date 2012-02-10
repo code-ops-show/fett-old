@@ -26,6 +26,7 @@ end
 
 gem 'jquery-rails'
 
+gem 'tire'
 
 #gem "rspec-rails", :group => [:test, :development]
 #group :test do

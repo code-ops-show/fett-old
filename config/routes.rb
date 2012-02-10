@@ -1,4 +1,6 @@
 Fett::Application.routes.draw do
+
+  root :to => "home#index"
   
   ActiveAdmin.routes(self)
 
@@ -20,8 +22,6 @@ Fett::Application.routes.draw do
   devise_for :employees, :skip => :sessions
   devise_for :employers, :skip => :sessions
   
-  root :to => "home#index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

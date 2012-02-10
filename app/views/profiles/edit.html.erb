@@ -48,7 +48,7 @@
       <li><hr></li>
       <li><%= @employer.profile.address %></li>
       <li><%= @employer.profile.telephone %></li>
-      <li><%= link_to @employer.profile.url, @employer.profile.url %></li>
+      <li><%= link_to @employer.profile.url if @employer.profile.url.present? %></li>
     </ul>
   </div>
 </div>

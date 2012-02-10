@@ -1,6 +1,11 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+input#query {
+  font-size: 14px;
+  padding: 5px 10px;
+  width: 300px;
+}
 div.jobs-listing h4 {
   padding-left: 10px
 }

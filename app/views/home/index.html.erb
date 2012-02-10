@@ -1,12 +1,12 @@
 <div class="row">
   <div class="nine columns">
-  <%= form_tag "/", class: "nice" do %>
-    <%= text_field_tag "search", nil, class: "input-text", placeholder: "Search" %>
+  <%= form_tag root_path, method: :get, class: "nice" do %>
+    <%= text_field_tag :query, params[:query], class: "input-text", placeholder: "Search" %>
   <% end -%>
   </div>
   <div class="three columns">
     <div class="right">
-      <%= link_to "Post a job", new_employer_job_path(current_user), :class => "medium button radius" if current_user and current_user.type == 'Employer' %>
+      <%= link_to "Post a job", new_employer_jobs_path(current_user), :class => "medium button radius" if current_user and current_user.type == 'Employer' %>
     </div>
   </div>
 </div>
@@ -18,16 +18,21 @@
         <% if @jobs.each do |j| %>
           <%= content_tag_for :li, j do %>
             <%= link_to job_path(j) do %>
+            <% if j.created_at > Time.now - 1.days %>
             <span class="green radius label">new</span>
+            <% elsif j.updated_at > Time.now - 1.days %>
+            <span class="white radius label">update</span>
+            <% end -%>
             <span class="job location"><b><%= j.location %></b></span>
-            <span class="job title"><u><%= j.title %></u></span> at 
-            <span class="job company"><%= j.employer.profile.name rescue 'no employer name' %></span>
+            <span class="job title"><u><%= j.title %></u></span> <%= 'at' if j.employer.profile.name.present? %>
+            <span class="job company"><%= j.employer.profile.name %></span>
             <span class="date"><%= j.created_at.strftime('%b %d') %></span>
             <span class="job salary"><%= j.salary %></span>
             <% end %>
           <% end %>
+
         <% end.empty? %>
-         empty
+         -> No matches found.
         <% end %>
       </ul>
     </div>

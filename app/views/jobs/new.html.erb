@@ -49,7 +49,7 @@
       <li><%= @employer.profile.address %></li>
       <li><%= @employer.profile.telephone %></li>
       <li><%= @employer.email %></li>
-      <li><%= link_to @employer.profile.url %></li>
+      <li><%= link_to @employer.profile.url if @employer.profile.url.present?%></li>
     </ul>
   </div>
 </div>
