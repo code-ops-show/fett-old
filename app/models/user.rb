@@ -13,10 +13,17 @@ class User < ActiveRecord::Base
   USER_TYPES = %w[Employee Employer]
 
 	after_create :create_profile, if: Proc.new { |u|  u.type == 'Employer' }
+  after_create :create_resume, if: proc { |u| u.type == 'Employee' } 
 
   def create_profile
     profile = Profile.new
     profile.employer_id = self.id
     profile.save
+  end
+
+  def create_resume
+    resume = Resume.new
+    resume.employee_id = self.id
+    resume.save
   end
 end

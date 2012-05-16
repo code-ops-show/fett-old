@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="twelve columns">
+    <h4 class="edit-header">Edit Resume</h4>
+  </div>
+</div>
+<%= render "devise/menu/edit_nav_bar_items" %>
+<%= form_for @employee, :html => { :class => "nice"} do |f| %>
+  <div class="row">
+    <div class="twelve columns">
+      <div class="six columns" >
+        <div class='panel'>
+        <%= f.fields_for :resume do |g| %>
+          <ul class="form-field ">
+            <li>
+              <%= g.label :first_name, id: "text" %>
+              <%= g.text_field "first_name", class: "input-text required", placeholder: "ex: Steve" %>
+              <%= g.label :last_name, id: "text" %>
+              <%= g.text_field "last_name", class: "input-text required", placeholder: "ex: Jobs"  %>
+              <%= g.label :date_of_birth, id: "text" %>
+              <%= g.text_field "dateofbirth",  class: "input-text required", placeholder: "ex: 1955-02-24" %>        	
+              <%= g.label :nationality, id: "text" %>
+              <%= g.text_field "nationality", class: "input-text required", placeholder: "ex: American" %>
+              <%= g.label :status, id: "text" %>
+              <%= select( :resume , "status" ,%w[Single Married Divorce]) %>
+              <%= g.label :language, id: "text" %>
+              <%= g.text_field "language", class: "input-text required", placeholder: "ex: America" %>
+              <%= g.label :address, id: "text" %>
+              <%= g.text_area "address", class: "input-text required", placeholder: "ex: Apple Campus, 1 Infinite Loop, Cupertino, California, United States" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="six columns" >
+        <ul id='work-history' class="form-field ">
+          <%= g.fields_for :work_histories, :html => { :class => "panel"} do |w| %>
+          <li>
+            <div class="panel">
+              <%= w.label :company_name %>
+              <%= w.text_field :company_name, class: "input-text required", placeholder: "ex: Apple Inc."  %>
+              <%= w.label :start_date %>
+              <%= w.text_field :start_date, class: "datepicker input-text required", placeholder: "ex: 1977-01-03"  %><br/>
+              <%= w.label :end_date %>
+              <%= w.text_field :end_date, class: "datepicker input-text", placeholder: "ex: 2011-10-05"   %><br/>
+              <%= w.label :job_description %>
+              <%= w.text_field :job_description, class: "input-text required", placeholder: "ex: ICEO"  %>
+              <%= w.hidden_field :_destroy, class: 'destroy' %>
+              <%= link_to "Remove", '#', class: 'remove' %>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="description five columns offset-by-one">
+        <%= link_to "Back", :back, :class => "medium button radius" %>
+        <%= f.submit "Update", :class => "medium button radius" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

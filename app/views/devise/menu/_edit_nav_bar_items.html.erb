@@ -5,11 +5,14 @@
       <% if current_user.type == 'Employer' and current_user.profile %>
       <%= nav_link("Profile", edit_employer_profile_path(current_user)) %>
       <% elsif current_user.type == 'Employee' %>
-      <%= nav_link("Resume", "") %>
+      <%= nav_link("Resume", edit_employee_path(current_user)) %>
       <% else %>
       <%= nav_link("New Profile", new_employer_profile_path(current_user)) %>
       <% end %>
       <%= nav_link("Jobs List", employer_jobs_path(current_user)) %>
+      <% if current_user.type == 'Employee' and current_page?(edit_employee_path(current_user)) %>
+        <%= link_to "Add Work History", '#', id: 'add_history', class: "white radius nice button" %>
+      <% end %>
     </dl>
   </div>
 </div>

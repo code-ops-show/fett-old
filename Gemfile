@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -13,8 +13,10 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'zurb-foundation'
 gem "rmagick"
 gem 'carrierwave'
+gem 'kaminari'
 gem 'RedCloth'
-
+gem 'jquery-rails'
+gem 'tire'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,9 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
-gem 'tire'
 
 #gem "rspec-rails", :group => [:test, :development]
 #group :test do

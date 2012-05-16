@@ -6,9 +6,13 @@ class Job < ActiveRecord::Base
   include Tire::Model::Callbacks
 
   def self.search(params)
-    tire.search(load: true) do
-      query { string params[:query] } if params[:query].present?
-      sort { by :created_at, "desc" } if params[:query].blank?
+    if Job.count > 0
+      tire.search(load: true) do
+        query { string params[:query] } if params[:query].present?
+        sort { by :created_at, "desc" } if params[:query].blank?
+      end
+    else 
+      scoped
     end
   end
 end

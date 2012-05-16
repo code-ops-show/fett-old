@@ -1,0 +1,29 @@
+// Place all the styles related to the resume controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.description.five_columns.offset-by-one{
+	margin: center;
+}
+.five_columns a{
+	padding: 20px 5px;
+}
+#history-text{
+	margin-left: 2px;
+	margin-right: 48px;
+	width: 292px;
+	margin-top: -9px;
+	margin-bottom: 9px;
+	height: 75px;
+}
+a#add_history {
+	float: right;
+	margin-top: -9px;
+}
+input::-webkit-input-placeholder {
+	font-style: italic;
+}
+textarea::-webkit-input-placeholder {
+	font-style: italic;
+}

@@ -13,10 +13,14 @@ Fett::Application.routes.draw do
     resources :jobs
     resource :profile
   end
-
+  resources :employees
   resources :jobs
   resources :profiles
-
+  resources :resume do
+    resources :work_histories
+  end
+  resources :work_histories
+  
   devise_for :users, :path_names => { :sign_up => "register", :sign_in => "login", :sign_out => "logout" }
 
   devise_for :employees, :skip => :sessions
